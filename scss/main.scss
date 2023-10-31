@@ -1,10 +1,32 @@
-.container-fluid {
-    background-color: #d0cdcd;
-    width: 100%;
-    height: 100%;
+// Estilização da navbar
+
+$base-color: #333;
+$highlight-color: #999;
+
+@mixin metal-gradient {
+  background: linear-gradient(45deg, $base-color, $highlight-color, $base-color);
 }
 
-$primary: #8800ff;
-$secondary: #9c7206;
+@mixin metal-shadow {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+}
+
+.metal-background {
+  @include metal-gradient;
+  @include metal-shadow;
+  width: 100%;
+  height: 100%;
+}
+
+.metal-nav {
+  @extend .metal-background;
+}
+
+// Estilização dos textos da navbar
+$cor-texto-titulo: #aacecf;
+$cor-texto-links: #c0d28a;
+
+$primary: $cor-texto-titulo;
+$secondary: $cor-texto-links;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
